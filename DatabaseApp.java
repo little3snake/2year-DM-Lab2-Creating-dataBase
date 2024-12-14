@@ -208,6 +208,21 @@ public class DatabaseApp extends Application {
             }
         });
 
+        //                                                                       import csv
+        TextField exportField = new TextField();
+        restoreBackupField.setPromptText("Export File Name (excel)");
+
+        Button exportButton = new Button("Export Backup");
+        restoreBackupButton.setOnAction(e -> {
+            String backupFileName = exportField.getText();
+            if (!backupFileName.isEmpty()) {
+                //db.exportToExcel ("excel.xlsx");
+                exportField.clear();
+            } else {
+                //System.out.println("Please provide a backup file name.");
+            }
+        });
+
 
         // Компоновка интерфейса
         HBox addBox = new HBox(10, firstNameField, lastNameField, sportField, birthDateField, heightField, isActiveCheckBox, addButton);
@@ -225,10 +240,10 @@ public class DatabaseApp extends Application {
         HBox backupBox = new HBox(10, backupValueField, backupButton, restoreBackupField, restoreBackupButton);
         backupBox.setPadding(new Insets(10));
 
-        //HBox restoreBox = new HBox(10, );
-        //restoreBox.setPadding(new Insets(10));
+        HBox exportBox = new HBox(10, exportField, exportButton);
+        exportBox.setPadding(new Insets(10));
 
-        VBox root = new VBox(10, tableView, addBox, editBox, searchBox, deleteBox, backupBox);
+        VBox root = new VBox(10, tableView, addBox, editBox, searchBox, deleteBox, backupBox, exportBox);
         root.setPadding(new Insets(10));
 
         Scene scene = new Scene(root, 1000, 600);
