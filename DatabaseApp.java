@@ -216,7 +216,7 @@ public class DatabaseApp extends Application {
         restoreBackupButton.setOnAction(e -> {
             String backupFileName = exportField.getText();
             if (!backupFileName.isEmpty()) {
-                //db.exportToExcel ("excel.xlsx");
+                db.exportToExcel ("excel.xlsx");
                 exportField.clear();
             } else {
                 //System.out.println("Please provide a backup file name.");
