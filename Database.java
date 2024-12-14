@@ -241,12 +241,12 @@ public class Database {
 
 
 
-    private void executeSQL(String sql) {
+    /*private void executeSQL(String sql) {
         try (Statement stmt = connection.createStatement()) {
             stmt.execute(sql);
         } catch (SQLException e) {
             System.err.println("SQL error: " + e.getMessage());
         }
-    }
+    }*/
 
 }
